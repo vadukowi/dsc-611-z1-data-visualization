@@ -1,0 +1,1158 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20183.18.1219.1533                               -->
+<workbook source-build='2018.3.2 (20183.18.1219.1533)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SpatialFileLayer />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='Group_Project_15619195634560' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='citycenterdatadownload' inline='true' name='federated.1u7vohy1he6buo13m33kg08m8hx5' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='citycenterdatadownload' name='textscan.1r8zdwd0bw75oy1cri0bh0p7qrip'>
+            <connection class='textscan' directory='/Users/andrewrosa/Desktop/dsc-611-z1-data-visualization' filename='citycenterdatadownload.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1r8zdwd0bw75oy1cri0bh0p7qrip' name='citycenterdatadownload.csv' table='[citycenterdatadownload#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='MSA' ordinal='0' />
+            <column datatype='string' name='GEO' ordinal='1' />
+            <column datatype='date' date-parse-format='yyyy' name='YEAR' ordinal='2' />
+            <column datatype='string' name='INDUSTRY' ordinal='3' />
+            <column datatype='integer' name='Count' ordinal='4' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MSA</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MSA]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>MSA</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GEO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[GEO]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>GEO</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INDUSTRY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[INDUSTRY]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>INDUSTRY</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Count]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>Count</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Industry' datatype='string' name='[INDUSTRY]' role='dimension' type='nominal' />
+      <column datatype='string' name='[MSA]' role='dimension' semantic-role='[CMSA].[Name]' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Year' datatype='date' name='[YEAR]' role='dimension' type='quantitative' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/andrewrosa/Documents/My Tableau Repository/Datasources/citycenterdatadownload.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>MSA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MSA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MSA</remote-alias>
+              <ordinal>0</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>54</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GEO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[GEO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GEO</remote-alias>
+              <ordinal>1</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>YEAR</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[YEAR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>YEAR</remote-alias>
+              <ordinal>2</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>INDUSTRY</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[INDUSTRY]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>INDUSTRY</remote-alias>
+              <ordinal>3</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Count</remote-alias>
+              <ordinal>4</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14422</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.5' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='metros' inline='true' name='federated.1od6uyq1ld7ta91fvhlkh1pug0hi' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='metros' name='ogrdirect.0srp99e0xvx7uf17j9ns41uhoa2f'>
+            <connection class='ogrdirect' directory='/Users/andrewrosa/Desktop/dsc-611-z1-data-visualization' filename='metros.geojson' ogr-grid-shift-folder='/Applications/Tableau Desktop 2018.3.app/Contents/install/local/proj4' password='' server='' tablename='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='citycenterdatadownload' name='textscan.1508s8a13rposn195gsfx0wdrdbd'>
+            <connection class='textscan' directory='/Users/andrewrosa/Desktop/dsc-611-z1-data-visualization' filename='citycenterdatadownload.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[metros.geojson].[city_names]' />
+                <expression op='[citycenterdatadownload.csv].[MSA]' />
+              </expression>
+              <expression op='='>
+                <expression op='[metros.geojson].[shape]' />
+                <expression op='[citycenterdatadownload.csv].[GEO]' />
+              </expression>
+            </expression>
+          </clause>
+          <relation connection='ogrdirect.0srp99e0xvx7uf17j9ns41uhoa2f' name='metros.geojson' table='[metros.geojson]' type='table'>
+            <columns>
+              <column datatype='string' name='NAME' ordinal='0' />
+              <column datatype='string' name='shape' ordinal='1' />
+              <column datatype='string' name='city_names' ordinal='2' />
+              <column datatype='spatial' name='Geometry' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1508s8a13rposn195gsfx0wdrdbd' name='citycenterdatadownload.csv' table='[citycenterdatadownload#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='MSA' ordinal='0' />
+              <column datatype='string' name='GEO' ordinal='1' />
+              <column datatype='date' date-parse-format='yyyy' name='YEAR' ordinal='2' />
+              <column datatype='string' name='INDUSTRY' ordinal='3' />
+              <column datatype='integer' name='Count' ordinal='4' />
+            </columns>
+          </relation>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NAME]</local-name>
+            <parent-name>[metros.geojson]</parent-name>
+            <remote-alias>NAME</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>shape</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[shape]</local-name>
+            <parent-name>[metros.geojson]</parent-name>
+            <remote-alias>shape</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city_names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[city_names]</local-name>
+            <parent-name>[metros.geojson]</parent-name>
+            <remote-alias>city_names</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[metros.geojson]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MSA</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MSA]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>MSA</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GEO</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[GEO]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>GEO</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INDUSTRY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[INDUSTRY]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>INDUSTRY</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Count]</local-name>
+            <parent-name>[citycenterdatadownload.csv]</parent-name>
+            <remote-alias>Count</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='GEO' datatype='string' name='[Calculation_684617516317462528]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [shape] &#10;    WHEN &apos;metro&apos; THEN &apos;Metro&apos;&#10;    WHEN &apos;10_m&apos; THEN &apos;10MI&apos;&#10;    ELSE &apos;Core&apos; END' />
+      </column>
+      <column caption='GEO1' datatype='string' name='[GEO]' role='dimension' type='nominal' />
+      <column caption='Industry' datatype='string' name='[INDUSTRY]' role='dimension' type='nominal' />
+      <column datatype='string' name='[MSA]' role='dimension' semantic-role='[CMSA].[Name]' type='nominal' />
+      <column caption='Name' datatype='string' name='[NAME]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Year' datatype='date' name='[YEAR]' role='dimension' type='quantitative' />
+      <column caption='City Names' datatype='string' name='[city_names]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Shape' datatype='string' name='[shape]' role='dimension' type='nominal' />
+      <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+      <group caption='Action (GEO1)' hidden='true' name='[Action (GEO1)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[GEO]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (GEO1,Industry)' hidden='true' name='[Action (GEO1,Industry)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[GEO]' />
+          <groupfilter function='level-members' level='[INDUSTRY]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Shape)' hidden='true' name='[Action (Shape)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[shape]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='false' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/andrewrosa/Documents/My Tableau Repository/Datasources/metros.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>NAME</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NAME]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>NAME</remote-alias>
+              <ordinal>0</ordinal>
+              <family>metros.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>92</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>shape</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[shape]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>shape</remote-alias>
+              <ordinal>1</ordinal>
+              <family>metros.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>city_names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[city_names]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>city_names</remote-alias>
+              <ordinal>2</ordinal>
+              <family>metros.geojson</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>49</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>3</ordinal>
+              <family>metros.geojson</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>149</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MSA</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MSA]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>MSA</remote-alias>
+              <ordinal>4</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>49</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GEO</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[GEO]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GEO</remote-alias>
+              <ordinal>5</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>YEAR</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[YEAR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>YEAR</remote-alias>
+              <ordinal>6</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>INDUSTRY</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[INDUSTRY]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>INDUSTRY</remote-alias>
+              <ordinal>7</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Count</remote-alias>
+              <ordinal>8</ordinal>
+              <family>citycenterdatadownload.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12176</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.544321' measure-ordering='alphabetic' measure-percentage='0.455679' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:GEO:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;10MI&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>%many-values%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Metro&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Core&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='NAME' />
+        <field-sort-custom-order field='shape' />
+        <field-sort-custom-order field='Calculation_684617516317462528' />
+        <field-sort-custom-order field='city_names' />
+        <field-sort-custom-order field='Geometry' />
+      </field-sort-info>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <shared-views>
+    <shared-view name='federated.1od6uyq1ld7ta91fvhlkh1pug0hi'>
+      <datasources>
+        <datasource caption='metros' name='federated.1od6uyq1ld7ta91fvhlkh1pug0hi' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1od6uyq1ld7ta91fvhlkh1pug0hi'>
+        <column caption='City Names' datatype='string' name='[city_names]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+        <column-instance column='[city_names]' derivation='None' name='[none:city_names:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:city_names:nk]'>
+        <groupfilter function='member' level='[none:city_names:nk]' member='&quot;Richmond&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+        <target field='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:city_names:nk]' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Map' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Count Of Jobs by Industry' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 3 (generated)' name='[Action3]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Percentage of Jobs by Region' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Count Of Jobs by Industry'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='metros' name='federated.1od6uyq1ld7ta91fvhlkh1pug0hi' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1od6uyq1ld7ta91fvhlkh1pug0hi'>
+            <column datatype='integer' name='[Count]' role='measure' type='quantitative' />
+            <column caption='GEO1' datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column caption='Industry' datatype='string' name='[INDUSTRY]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='date' name='[YEAR]' role='dimension' type='quantitative' />
+            <column caption='City Names' datatype='string' name='[city_names]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[INDUSTRY]' derivation='None' name='[none:INDUSTRY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[city_names]' derivation='None' name='[none:city_names:nk]' pivot='key' type='nominal' />
+            <column caption='Shape' datatype='string' name='[shape]' role='dimension' type='nominal' />
+            <column-instance column='[Count]' derivation='Sum' name='[sum:Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[YEAR]' derivation='Year' name='[yr:YEAR:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1)]'>
+            <groupfilter function='level-members' level='[GEO]' user:ui-action-filter='[Action3]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (Shape)]'>
+            <groupfilter function='level-members' level='[shape]' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:INDUSTRY:nk]'>
+            <groupfilter function='level-members' level='[none:INDUSTRY:nk]' />
+          </filter>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[yr:YEAR:ok]' filter-group='3'>
+            <groupfilter function='member' level='[yr:YEAR:ok]' member='2008' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (Shape)]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:INDUSTRY:nk]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[yr:YEAR:ok]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:city_names:nk]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' field='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:INDUSTRY:nk]' value='22' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:GEO:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:INDUSTRY:nk]</rows>
+        <cols>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[sum:Count:qk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='metros' name='federated.1od6uyq1ld7ta91fvhlkh1pug0hi' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1od6uyq1ld7ta91fvhlkh1pug0hi'>
+            <column datatype='integer' name='[Count]' role='measure' type='quantitative' />
+            <column caption='GEO1' datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Industry' datatype='string' name='[INDUSTRY]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='date' name='[YEAR]' role='dimension' type='quantitative' />
+            <column caption='City Names' datatype='string' name='[city_names]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column-instance column='[city_names]' derivation='None' name='[none:city_names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[shape]' derivation='None' name='[none:shape:nk]' pivot='key' type='nominal' />
+            <column caption='Shape' datatype='string' name='[shape]' role='dimension' type='nominal' />
+            <column-instance column='[Count]' derivation='Sum' name='[sum:Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[YEAR]' derivation='Year' name='[yr:YEAR:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1)]'>
+            <groupfilter function='level-members' level='[GEO]' user:ui-action-filter='[Action3]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1,Industry)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[GEO]' />
+              <groupfilter function='level-members' level='[INDUSTRY]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[yr:YEAR:ok]' filter-group='3'>
+            <groupfilter function='member' level='[yr:YEAR:ok]' member='2008' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:city_names:nk]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[yr:YEAR:ok]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1,Industry)]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Longitude (generated)]' field-type='quantitative' max='-8043986.6542262845' min='-9277626.9856109861' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Latitude (generated)]' field-type='quantitative' max='4661968.9048343133' min='4341542.8447343903' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[sum:Count:qk]' num-steps='5' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-diverging'>
+                <color>#33608c</color>
+                <color>#526598</color>
+                <color>#7567a2</color>
+                <color>#9768a5</color>
+                <color>#b669a1</color>
+                <color>#d16c98</color>
+                <color>#e7718a</color>
+                <color>#f67c7c</color>
+                <color>#ff8974</color>
+                <color>#f6ba57</color>
+                <color>#d9c9ca</color>
+                <color>#d9b9bb</color>
+                <color>#daa9ac</color>
+                <color>#da999d</color>
+                <color>#da8a8d</color>
+                <color>#db7a7e</color>
+                <color>#db6a6f</color>
+                <color>#db5a60</color>
+                <color>#dc4a51</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[sum:Count:qk]' />
+              <lod column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[clct:Geometry:nk]' />
+              <lod column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:shape:nk]' />
+              <geometry column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[clct:Geometry:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Latitude (generated)]</rows>
+        <cols>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Longitude (generated)]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Percentage of Jobs by Region'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='metros' name='federated.1od6uyq1ld7ta91fvhlkh1pug0hi' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1od6uyq1ld7ta91fvhlkh1pug0hi'>
+            <column datatype='integer' name='[Count]' role='measure' type='quantitative' />
+            <column caption='GEO1' datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column caption='Industry' datatype='string' name='[INDUSTRY]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='date' name='[YEAR]' role='dimension' type='quantitative' />
+            <column caption='City Names' datatype='string' name='[city_names]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[city_names]' derivation='None' name='[none:city_names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Count]' derivation='Sum' name='[pcto:sum:Count:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column caption='Shape' datatype='string' name='[shape]' role='dimension' type='nominal' />
+            <column-instance column='[Count]' derivation='Sum' name='[sum:Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[YEAR]' derivation='Year' name='[yr:YEAR:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1,Industry)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[GEO]' />
+              <groupfilter function='level-members' level='[INDUSTRY]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (Shape)]'>
+            <groupfilter function='level-members' level='[shape]' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[yr:YEAR:ok]' filter-group='3'>
+            <groupfilter function='member' level='[yr:YEAR:ok]' member='2008' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:city_names:nk]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[yr:YEAR:ok]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1,Industry)]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (Shape)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:GEO:nk]' />
+              <wedge-size column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[pcto:sum:Count:qk]' />
+              <size column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[sum:Count:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.7691160440444946' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='Year to Year Growth of Jobs'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='metros' name='federated.1od6uyq1ld7ta91fvhlkh1pug0hi' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1od6uyq1ld7ta91fvhlkh1pug0hi'>
+            <column datatype='integer' name='[Count]' role='measure' type='quantitative' />
+            <column caption='GEO1' datatype='string' name='[GEO]' role='dimension' type='nominal' />
+            <column caption='Industry' datatype='string' name='[INDUSTRY]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='date' name='[YEAR]' role='dimension' type='quantitative' />
+            <column caption='City Names' datatype='string' name='[city_names]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column-instance column='[GEO]' derivation='None' name='[none:GEO:nk]' pivot='key' type='nominal' />
+            <column-instance column='[city_names]' derivation='None' name='[none:city_names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Count]' derivation='Sum' name='[pcdf:sum:Count:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='PctDiff'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column-instance column='[YEAR]' derivation='Year-Trunc' name='[tyr:YEAR:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1,Industry)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[GEO]' />
+              <groupfilter function='level-members' level='[INDUSTRY]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:city_names:nk]</column>
+            <column>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[Action (GEO1,Industry)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:GEO:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[pcdf:sum:Count:qk]</rows>
+        <cols>[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[tyr:YEAR:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='metros' name='federated.1od6uyq1ld7ta91fvhlkh1pug0hi' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1od6uyq1ld7ta91fvhlkh1pug0hi'>
+        <column caption='Year' datatype='date' name='[YEAR]' role='dimension' type='quantitative' />
+        <column caption='City Names' datatype='string' name='[city_names]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+        <column-instance column='[city_names]' derivation='None' name='[none:city_names:nk]' pivot='key' type='nominal' />
+        <column-instance column='[YEAR]' derivation='Year' name='[yr:YEAR:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='74000' id='19' param='horz' type='layout-flow' w='98400' x='800' y='25000'>
+            <zone h='74000' id='16' param='horz' type='layout-flow' w='98400' x='800' y='25000'>
+              <zone h='74000' id='12' param='horz' type='layout-flow' w='98400' x='800' y='25000'>
+                <zone h='74000' id='10' type='layout-basic' w='98400' x='800' y='25000'>
+                  <zone h='67961' id='5' param='horz' type='layout-flow' w='98400' x='800' y='31039'>
+                    <zone h='67961' id='3' type='layout-basic' w='98400' x='800' y='31039'>
+                      <zone h='33983' id='1' name='Map' w='85598' x='800' y='31039'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='33978' id='7' name='Count Of Jobs by Industry' w='67700' x='18698' y='65022'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='33978' id='8' name='Count Of Jobs by Industry' pane-specification-id='0' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:GEO:nk]' type='color' w='12802' x='86398' y='65022'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='33983' id='6' name='Map' pane-specification-id='0' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[sum:Count:qk]' type='color' w='12802' x='86398' y='31039'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='33978' id='14' name='Percentage of Jobs by Region' w='17898' x='800' y='65022'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                  <zone h='6039' id='9' mode='dropdown' name='Map' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:city_names:nk]' type='filter' values='database' w='39197' x='800' y='25000'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='6039' id='13' mode='dropdown' name='Count Of Jobs by Industry' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[yr:YEAR:ok]' type='filter' values='database' w='59203' x='39997' y='25000'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='24000' id='20' name='Year to Year Growth of Jobs' w='98400' x='800' y='1000'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='51'>
+    <window class='worksheet' name='Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[sum:Count:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{1CB70D7D-81D1-4277-8D49-7958ED526EBF}' />
+    </window>
+    <window class='worksheet' name='Count Of Jobs by Industry'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[yr:YEAR:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:GEO:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1F8B4132-0F90-4AB2-A742-B75956631314}' />
+    </window>
+    <window class='worksheet' name='Percentage of Jobs by Region'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:GEO:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[sum:Count:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{F484588B-9C60-4F8E-BD5B-A7EC0FE96FBC}' />
+    </window>
+    <window class='worksheet' name='Year to Year Growth of Jobs'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1od6uyq1ld7ta91fvhlkh1pug0hi].[none:GEO:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C86D38C6-9382-48EE-9742-3FE362920F41}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Count Of Jobs by Industry' />
+        <viewpoint name='Map'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Percentage of Jobs by Region' />
+        <viewpoint name='Year to Year Growth of Jobs'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{40FA83B0-EC99-4EA2-B2C2-B32166E2E1A8}' />
+    </window>
+  </windows>
+</workbook>
